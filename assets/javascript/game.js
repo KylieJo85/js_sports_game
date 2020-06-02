@@ -1,51 +1,89 @@
-let teamOneshootButton = document.querySelector("#teamone-shoot-button");
-let teamoneNumshots = document.querySelector("#teamone-numshots");
-let teamTwoshootButton = document.querySelector("#teamtwo-shoot-button");
-let teamtwoNumshots = document.querySelector("#teamtwo-numshots");
-let resetButton = document.querySelector("#reset-button");
-let numResets = document.querySelector("#num-resets");
+let teamOneshootButton = document.querySelector("#teamone-shoot-button")
+let teamoneNumshots = document.querySelector("#teamone-numshots")
+let teamoneNumgoals = document.querySelector('#teamone-numgoals')
+let teamTwoshootButton = document.querySelector("#teamtwo-shoot-button")
+let teamtwoNumshots = document.querySelector("#teamtwo-numshots")
+let teamtwoNumgoals = document.querySelector('#teamtwo-numgoals')
+let resetButton = document.querySelector("#reset-button")
+let numResets = document.querySelector("#num-resets")
 
-teamOneshootButton.addEventListener("click", function(){
-let x= Number(teamoneNumshots.innerHTML) + 1;
-teamoneNumshots.innerHTML = x;
-console.log("team one shots scored");
- })
 
-teamTwoshootButton.addEventListener("click", function (){
-console.log("team two shots scored")
-let y= Number(teamtwoNumshots.innerHTML) + 1;
-teamtwoNumshots.innerHTML = y;
-    })
+teamOneshootButton.addEventListener("click", function () {
+console.log("team one scored!")
 
-    teamoneNumshots.addEventListener("click" , function(){
-     let teamoneNumshots=Math.random() *100;
-      if (teamoneNumshots <80 ) { sendMessage("Success!");
-      }
-      else  (z <20) ;{ sendMessage ("Fail!");
-    }
-    console.log ("attempt one")
-    })
+     let newCount = Number(teamoneNumshots.innerHTML) + 1
+     teamoneNumshots.innerHTML = newCount
 
-    teamtwoNumshots.addEventListener("click", function(){
-      
-      let teamtwoNumshots=Math.random() *100;
+     let randNum = Math.floor(Math.random() * 100) + 1
+     console.log(randNum)
 
-      if (teamtwoNumshots <80) { sendMessage("Second Success!")
-      }
-else (a <20) ; { sendMessage ("Second Fail")}
-console.log ("attempt two")
-    } )
 
-    resetButton.addEventListener("click", function () {
-      let b= Number(resetButton.innerHTML) +1;
-      resetButton.innerHTML =b;
-      console.log ("Reset times")
+     if (randNum < 50) {
+         
+          let newCount5 = Number(teamoneNumgoals.innerHTML) + 1
+          teamoneNumgoals.innerHTML = newCount5
 
-    })
+          console.log((newCount5))
 
-    numResets.addEventListener("click", function () {
-      let c= Number(numReset.innerHTML) +0;
-      numResets.innerHTML =c
-      console.log ("set to zero")
+     }
 
-    })  
+     else {
+          teamoneNumshots.innerHTML = newCount
+          console.log((newCount))
+
+     }
+
+})
+
+
+
+
+teamTwoshootButton.addEventListener("click", function () {
+
+     console.log("team two  scored!")
+
+     let newCount3 = Number(teamtwoNumshots.innerHTML) + 1
+     teamtwoNumshots.innerHTML = newCount3
+
+     let randNum2 = Math.floor(Math.random() * 100) + 1
+     console.log(randNum2)
+
+
+     if (randNum2 < 50) {
+         
+          let newCount6 = Number(teamtwoNumgoals.innerHTML) + 1
+          teamtwoNumgoals.innerHTML = newCount6
+
+          console.log((newCount6))
+
+     }
+
+     else {
+          teamtwoNumshots.innerHTML = newCount3
+          console.log((newCount3))
+
+     }
+
+})
+
+
+
+
+     
+
+     resetButton.addEventListener("click", function (){
+
+     let z = Number(numResets.innerHTML) + 1
+     numResets.innerHTML = z
+     console.log("number reset")
+
+     numResets.innerHTML=''
+
+     teamoneNumshots.innerHTML=0
+     teamoneNumgoals.innerHTML=0
+
+     teamtwoNumshots.innerHTML=0
+     teamtwoNumgoals.innerHTML=0
+
+
+})
