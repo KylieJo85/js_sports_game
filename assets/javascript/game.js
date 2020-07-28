@@ -8,6 +8,7 @@ let resetButton = document.querySelector("#reset-button")
 let numResets = document.querySelector("#num-resets")
 
 
+
 teamOneshootButton.addEventListener("click", function () {
 console.log("team one scored!")
 
@@ -72,12 +73,10 @@ teamTwoshootButton.addEventListener("click", function () {
      
 
      resetButton.addEventListener("click", function (){
-
-     let z = Number(numResets.innerHTML) + 1
-     numResets.innerHTML = z
-     console.log("number reset")
-
-     numResets.innerHTML=''
+          let resetNewCount = Number(numResets.innerHTML) + 1
+          numResets.innerHTML = resetNewCount
+     
+     
 
      teamoneNumshots.innerHTML=0
      teamoneNumgoals.innerHTML=0
